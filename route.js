@@ -1,4 +1,4 @@
-var App = angular.module("App", ["ngRoute"]);
+var App = angular.module("App", ["ngRoute", "ngCookies"]);
 
 App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 
@@ -6,17 +6,24 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
     templateUrl: 'views/home.html',
     controller: 'HomeController',
   })
+  .when('/sign-in', {
+    templateUrl: 'views/sign-in.html',
+    controller: 'LoginController',
+  })
+  .when('/sign-up', {
+    templateUrl: 'views/sign-up.html',
+    controller: 'RegisterController',
+  })
   .when('/quote', {
     templateUrl: 'views/quote.html',
     controller: 'QuoteController',
   })
-  .when('/create-account', {
-    templateUrl: 'views/create-account.html',
-    controller: 'CreateAccountController',
-  })
   .when('/invoice', {
     templateUrl: 'views/invoice.html',
     controller: 'InvoiceController',
+  })
+  .when('/test', {
+    templateUrl: 'views/test.html',
   }).otherwise({
     redirectTo: '/home'
   });
@@ -24,9 +31,16 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
   $locationProvider.html5Mode(true);
 }]);
 
-var HomeController = App.controller("HomeController", function ($scope) {
-  console.log('Home Controller !!!');
-});
+App.run(['$rootScope', function ($rootScope) {
+  $rootScope.baseUrl = '/play/project-redwood';
+
+  $rootScope.templates = {
+    header: $rootScope.baseUrl + '/views/header.html',
+    headerLoggedOut: $rootScope.baseUrl + '/views/header-logged-out.html',
+    sidebar: $rootScope.baseUrl + '/views/sidebar.html'
+  };
+}]);
+
 
 var QuoteController = App.controller("QuoteController", function ($scope) {
   console.log('Quote Controller');
@@ -34,12 +48,4 @@ var QuoteController = App.controller("QuoteController", function ($scope) {
 
 var InvoiceController = App.controller("InvoiceController", function ($scope) {
   console.log('Invoice Controller');
-});
-
-var CreateAccountController = App.controller("CreateAccountController", function ($scope) {
-
-});
-
-var LoginController = App.controller("LoginController", function ($scope) {
-
 });
