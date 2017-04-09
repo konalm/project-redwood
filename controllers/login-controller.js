@@ -14,15 +14,11 @@ var LoginController = App.controller("LoginController", function ($scope, $http,
       'LoginData' : formData_json
     })
       .then(function (response) {
-        console.log('recieved response');
-        console.log(response);
-        console.log(response.data.key);
         $cookies.put('project-redwood-key', response.data.key);
         $scope.errorMessage = '';
         $location.path('/home');
       },
         function (errorResponse) {
-          console.log('recieved error');
           $scope.errorMessage = errorResponse.data;
         });
   }

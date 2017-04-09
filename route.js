@@ -22,6 +22,18 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
     templateUrl: 'views/invoice.html',
     controller: 'InvoiceController',
   })
+  .when('/invoice/new', {
+    templateUrl: 'views/invoice-new.html',
+    controller: 'InvoiceController'
+  })
+  .when('/invoice/preview', {
+    templateUrl: 'views/invoice-preview.html',
+    controller: 'InvoiceController'
+  })
+  .when('/settings', {
+    templateUrl: 'views/settings.html',
+    controller: 'SettingsController'
+  })
   .when('/test', {
     templateUrl: 'views/test.html',
   }).otherwise({
@@ -40,12 +52,3 @@ App.run(['$rootScope', function ($rootScope) {
     sidebar: $rootScope.baseUrl + '/views/sidebar.html'
   };
 }]);
-
-
-var QuoteController = App.controller("QuoteController", function ($scope) {
-  console.log('Quote Controller');
-});
-
-var InvoiceController = App.controller("InvoiceController", function ($scope) {
-  console.log('Invoice Controller');
-});
