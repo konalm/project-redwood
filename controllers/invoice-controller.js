@@ -1,24 +1,13 @@
-var InvoiceController = App.controller("InvoiceController", function ($scope, $http, $location) {
+var InvoiceController = App.controller("InvoiceController", function($scope, $rootScope, $http, $location, $routeParams) {
+  console.log('invoice controller');
   $scope.invoiceData = {};
-  $scope.errorMessage = '';
+  $scope.invoiceId = $routeParams.invoiceId;
 
-  $scope.createInvoice = function(isValid) {
-    console.log('create invoice');
+  // var url = $location.path().split('/');
+  // $scope.invoiceId = url[url.length-1];
 
-    if (!isValid) {
-      return;
-    }
+  console.log('invoice id -->');
+  console.log($scope.invoiceId);
 
-    var invoiceData_json = JSON.stringify($scope.invoiceData);
-
-    $http.post('http://localhost:8888/play/sf-backend/web/app_dev.php/collect-data',
-    {
-      'InvoiceData' : invoiceData_json
-    })
-      .then(function (response) {
-        console.log('sent invoice data');
-        console.log(response);
-        $location.path('/invoice/preview');
-      });
-  }
+  $scope.pdfUrl = $rootScope.apiUrl + '/invoice-preview/' + $scope.invoiceId;
 });

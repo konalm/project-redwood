@@ -1,7 +1,20 @@
+<div id="header" ng-include src="templates.header"></div>
+<div id="sidebar-wrapper" ng-include src="templates.sidebar"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="upper-page">
+    <h1 class="page-header">Invoice Preview</h1>
+    <div class="button-container">
+      <a ng-href="{{baseUrl}}/invoice/{{invoiceId}}">
+        <button type="button" class="btn btn-primary"> Back to invoice</button>
+      </a>
+    </div>
+  </div>
 
   <iframe
-    src="http://localhost:8888/play/sf-backend/web/app_dev.php/create-invoice"
+    ng-src="{{ pdfUrl }}"
     style="width:718px; height:700px;"
     frameborder="0"
   >
   </iframe>
+</div>

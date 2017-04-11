@@ -18,16 +18,20 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
     templateUrl: 'views/quote.html',
     controller: 'QuoteController',
   })
-  .when('/invoice', {
-    templateUrl: 'views/invoice.html',
-    controller: 'InvoiceController',
+  .when('/invoices', {
+    templateUrl: 'views/invoices.html',
+    controller: 'InvoicesController',
   })
   .when('/invoice/new', {
     templateUrl: 'views/invoice-new.html',
+    controller: 'InvoicesController'
+  })
+  .when('/invoice/:invoiceId', {
+    templateUrl: 'views/invoice.html',
     controller: 'InvoiceController'
   })
-  .when('/invoice/preview', {
-    templateUrl: 'views/invoice-preview.html',
+  .when('/invoice/:invoiceId/preview', {
+    templateUrl:'views/invoice-preview.html',
     controller: 'InvoiceController'
   })
   .when('/settings', {
@@ -45,6 +49,7 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
 
 App.run(['$rootScope', function ($rootScope) {
   $rootScope.baseUrl = '/play/project-redwood';
+  $rootScope.apiUrl = 'http://localhost:8888/play/sf-backend/web/app_dev.php';
 
   $rootScope.templates = {
     header: $rootScope.baseUrl + '/views/header.html',

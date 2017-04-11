@@ -16,6 +16,7 @@
     <script src="controllers/home-controller.js" type="text/javascript"></script>
     <script src="controllers/login-controller.js" type="text/javascript"></script>
     <script src="controllers/sidebar-controller.js" type="text/javascript"></script>
+    <script src="controllers/invoices-controller.js" type="text/javascript"></script>
     <script src="controllers/invoice-controller.js" type="text/javascript"></script>
     <script src="controllers/quote-controller.js" type="text/javascript"></script>
     <script src="controllers/settings-controller.js" type="text/javascript"></script>

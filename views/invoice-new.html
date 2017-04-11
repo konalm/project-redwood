@@ -3,46 +3,40 @@
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <div class="upper-page">
-    <h1 class="page-header"> New Invoice</h1>
+    <h1 class="page-header"> New Invoice </h1>
     <div class="button-container">
-      <button type="button" class="btn  btn-primary">Back To Invoice</button>
-      <!-- <button type="button" class="btn  btn-primary">Invoice Settings</button> -->
+      <button type="button" class="btn  btn-primary"> Back To Invoice </button>
     </div>
   </div>
 
   <div class="main-content">
-    <form name="invoiceForm"
-      ng-submit="createInvoice(invoiceForm.$valid)"
+    <form name="clientForm"
+      ng-submit="createClient(clientForm.$valid)"
       class="form-invoice"
     >
-      <!-- <input type="text" class="form-control" placeholder="Description"
-        ng-model="invoiceData.clientDescription"
-        required
-      > -->
-      <br />
-      <h4> From </h4>
+      <h4> New Client </h4>
       <input type="text" class="form-control" placeholder="First name"
-        ng-model="invoiceData.firstName"
+        ng-model="clientData.firstName"
         required
       >
       <input type="text" class="form-control" placeholder="Last name"
-        ng-model="invoiceData.lasttName"
+        ng-model="clientData.lastName"
         required
       >
       <input type="email" class="form-control" placeholder="Email"
-        ng-model="invoiceData.email"
+        ng-model="clientData.email"
         required
       >
       <input type="text" class="form-control" placeholder="Address"
-        ng-model="invoiceData.address"
+        ng-model="clientData.address"
         required
       >
       <input type="text" class="form-control" placeholder="City"
-        ng-model="invoiceData.city"
+        ng-model="clientData.city"
         required
       >
       <input type="text" class="form-control" placeholder="Postcode"
-        ng-model="invoiceData.postcode"
+        ng-model="clientData.postcode"
         required
       >
 
