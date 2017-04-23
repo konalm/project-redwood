@@ -11,13 +11,14 @@
 
 .page-header {
   float: left;
+  margin: 0;
 }
 
 .main-content {
   background: white;
   /*border: 2px solid red;*/
   width: 100%;
-  margin-top:50px;
+  margin-top:25px;
   padding: 20px;
   min-height: 200px;
   box-shadow: 3px 5px 10px rgb(180,180,180);
@@ -25,4 +26,25 @@
 
 .button-container {
   float: right;
+}
+
+.invoice-nav-bar {
+  border: 0 solid red;
+}
+
+.invoice-nav-container {
+  border: 0 solid green;
+  max-width: 700px;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.invoice-nav-container a {
+  border: 0 solid yellow;
+  margin: auto;
+}
+
+.invoice-nav-container button {
+  min-width: 140px;
 }

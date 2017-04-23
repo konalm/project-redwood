@@ -1,0 +1,36 @@
+  <form name="clientForm"
+    ng-submit="createClient(clientForm.$valid)"
+    class="form-invoice"
+  >
+    <h4> Client / Customer </h4>
+    <br />
+
+    <input type="text" class="form-control" placeholder="First name"
+      ng-model="clientData.firstName"
+      required
+    >
+    <input type="text" class="form-control" placeholder="Last name"
+      ng-model="clientData.lastName"
+      required
+    >
+    <input type="email" class="form-control" placeholder="Email"
+      ng-model="clientData.email"
+      required
+    >
+    <input type="text" class="form-control" placeholder="Address"
+      ng-model="clientData.address"
+      required
+    >
+    <input type="text" class="form-control" placeholder="City"
+      ng-model="clientData.city"
+      required
+    >
+    <input type="text" class="form-control" placeholder="Postcode"
+      ng-model="clientData.postcode"
+      required
+    >
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Next
+    </button>
+  </form>

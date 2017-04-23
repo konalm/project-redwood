@@ -1,6 +1,8 @@
-var App = angular.module("App", ["ngRoute", "ngCookies"]);
+var App = angular.module("App", ["ngRoute", "ngCookies", "ngMaterial"]);
 
-App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+App.config(["$routeProvider", "$locationProvider", "$mdDateLocaleProvider",
+  function ($routeProvider, $locationProvider, $mdDateLocaleProvider) {
+
 
   $routeProvider.when('/home', {
     templateUrl: 'views/home.html',
@@ -26,7 +28,7 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
     templateUrl: 'views/invoice-new.html',
     controller: 'InvoicesController'
   })
-  .when('/invoice/:invoiceId', {
+  .when('/invoice/:invoiceId/:step', {
     templateUrl: 'views/invoice.html',
     controller: 'InvoiceController'
   })
@@ -45,6 +47,12 @@ App.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
   });
 
   $locationProvider.html5Mode(true);
+
+  console.log('changed date format');
+  $mdDateLocaleProvider.formatDate = function(date) {
+    return moment(date).format('DD MMMM YYYY');
+  };
+
 }]);
 
 App.run(['$rootScope', function ($rootScope) {

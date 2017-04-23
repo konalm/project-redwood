@@ -1,0 +1,27 @@
+{
+  "name": "project-redwood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "route.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konalm/project-redwood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konalm/project-redwood/issues"
+  },
+  "homepage": "https://github.com/konalm/project-redwood#readme"
+}

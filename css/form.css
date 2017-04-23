@@ -62,7 +62,22 @@ body {
 }
 
 .form-invoice .btn {
-  width: 50%;
+  /*width: 50%;*/
 }
 
-.
+.form-invoice textarea {
+  height: 10em;
+}
+
+.calendar-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #ccc;
+  margin-right: 15px;
+}
+
+.md-datepicker-input-container {
+  border: none;
+}

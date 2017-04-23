@@ -4,23 +4,67 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <div class="upper-page">
     <h1 class="page-header">Invoice</h1>
-    <!-- <div class="button-container">
-      <button type="button" class="btn  btn-primary">New Invoice</button>
-      <button type="button" class="btn  btn-primary">Invoice Settings</button>
-    </div> -->
   </div>
 
+  <div class="invoice-nav-bar">
+    <div class="invoice-nav-container">
+      <a ng-href="{baseUrl}/invoice/{invoiceId}/step-one">
+        <button type="button" class="btn btn-primary">
+            Client / Customer
+        </button>
+      </a>
+
+      <a ng-href="{baseUrl}/invoice/{invoiceId}/step-two">
+        <button type="button" class="btn btn-primary">
+            Information
+        </button>
+      </a>
+
+      <a ng-href="{baseUrl}/invoice/{invoiceId}/step-three">
+        <button type="button" class="btn btn-primary">
+          Line Items
+        </button>
+      </a>
+
+      <a ng-href="{baseUrl}/invoice/{invoiceId}/step-four">
+        <button type="button" class="btn btn-primary">
+          Final Step
+        </button>
+    </a>
+    </div>
+  </div>
+
+
+<!-- Step one -->
+<!-- customer / client form here -->
+
+
+<!-- Step two -->
+<!-- Information here -->
+
+
+<!-- Step Three -->
+<!-- Line Items here -->
+
+
+<!-- Step Four -->
+<!-- Final Stage here -->
+
+
   <div class="main-content">
-    <a href="#"><h4>Send</h4></a>
+    <div ng-include="stepTemplates.stepTwo"> </div>
+
+    <!-- <a href="#" ng-click="send()"><h4>Send</h4></a>
+    <p>{{ sentFeedback }}</p>
     <br />
     <a href="#"><h4>Edit</h4></a>
     <br />
     <a href="{{baseUrl}}/invoice/{{invoiceId}}/preview"><h4>Preview</h4></a>
     <br />
-    <a href="#"><h4>Download</h4></a>
+    <a href="#" ng-click="download()"><h4>Download</h4></a>
     <br />
     <a href="#"><h4>View full screen</h4></a>
     <br />
-    <a href="#"><h4>Print</h4></a>
+    <a href="#"><h4>Print</h4></a> -->
   </div>
 </div>
